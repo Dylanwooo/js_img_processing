@@ -1,8 +1,19 @@
 /**
  * Created by Dylanwoo on 2017/11/8.
  */
-module.exports = function () {
-    let greet = document.createElement('div');
-    greet.textContent =  'dylanwoo';
-    return greet
-};
+
+
+import React,{Component} from 'react';
+import config from './config.json';
+
+class Greeter extends Component{
+    render(){
+        return(
+            <div>
+                {config.greetText}
+            </div>
+        )
+    }
+}
+
+export default Greeter

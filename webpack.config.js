@@ -11,16 +11,17 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\css$/,
-                use:[
-                    {
-                        loader: "style-loader"
-                    },
-                    {
-                        loader: "css-loader"
-                    }
-                ]
+                test: /(\.jsx|\.js)$/,
+                use:
+                    { loader: "babel-loader" },
+                exclude: /node_modules/
             }
         ]
+    },
+    devServer: {
+        port: 8081,
+        inline:true,
+        historyApiFallback: true,
+        contentBase: "./public"
     }
 };
